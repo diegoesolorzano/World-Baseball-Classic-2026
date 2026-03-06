@@ -2,8 +2,10 @@ name: Update WBC Calendars
 
 on:
   schedule:
-    # Every 6 hours during the tournament (March 5-17)
-    - cron: "0 */6 * * *"
+    # Every hour during elimination days (March 11-17)
+    - cron: "0 * 11-17 3 *"
+    # Every 3 hours during pool play (March 5-10)
+    - cron: "0 */3 5-10 3 *"
   workflow_dispatch:
 
 permissions:
