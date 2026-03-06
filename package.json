@@ -1,0 +1,13 @@
+{
+  "name": "world-baseball-classic-2026",
+  "version": "1.0.0",
+  "description": "Auto-updating .ics calendars for the 2026 World Baseball Classic",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WBC 2026 - Calendario</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid #222;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #3b82f6, #ef4444);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
+    }
+
+    header p { color: #888; font-size: 0.9rem; }
+
+    .pools { margin-bottom: 2rem; }
+    .pools h2 {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .pool-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .pool-label {
+      font-size: 0.75rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .team-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 0.8rem;
+      background: #151528;
+      border: 1px solid #252540;
+      border-radius: 8px;
+      color: #ccc;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+
+    .team-btn:hover { border-color: #3b82f6; color: #fff; }
+    .team-btn.active {
+      border-color: #3b82f6;
+      background: #1a1a3a;
+      color: #fff;
+    }
+
+    .team-btn .flag { font-size: 1.2rem; }
+    .team-btn .code { font-weight: 600; }
+
+    .all-btn {
+      grid-column: 1 / -1;
+      justify-content: center;
+      background: #12122a;
+      border-style: dashed;
+    }
+
+    #calendar-section {
+      display: none;
+      margin-bottom: 2rem;
+      padding: 1.2rem;
+      background: #111125;
+      border: 1px solid #252540;
+      border-radius: 10px;
+    }
+
+    #calendar-section h3 {
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .url-box {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .url-box input {
+      flex: 1;
+      padding: 0.5rem 0.8rem;
+      background: #0a0a18;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #ddd;
+      font-family: monospace;
+      font-size: 0.8rem;
+    }
+
+    .url-box button, .webcal-btn {
+      padding: 0.5rem 1rem;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .url-box button:hover, .webcal-btn:hover { background: #2563eb; }
+
+    .webcal-btn {
+      display: inline-block;
+      background: #22c55e;
+      text-decoration: none;
+      margin-right: 0.5rem;
+    }
+
+    .webcal-btn:hover { background: #16a34a; }
+
+    .instructions {
+      font-size: 0.78rem;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    .instructions strong { color: #aaa; }
+
+    #games-section { margin-bottom: 2rem; }
+    #games-section h3 {
+      font-size: 1rem;
+      color: #888;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .game-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      background: #111125;
+      border: 1px solid #1e1e38;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .game-card.final { border-left: 3px solid #22c55e; }
+    .game-card.live { border-left: 3px solid #ef4444; }
+    .game-card.scheduled { border-left: 3px solid #3b82f6; }
+
+    .game-teams { flex: 1; }
+    .game-teams .vs { color: #555; margin: 0 0.3rem; }
+    .game-winner { color: #22c55e; font-weight: 600; }
+
+    .game-meta {
+      text-align: right;
+      color: #777;
+      font-size: 0.75rem;
+      min-width: 120px;
+    }
+
+    .game-score {
+      font-weight: 600;
+      color: #ddd;
+      margin-left: 0.8rem;
+      min-width: 50px;
+      text-align: center;
+    }
+
+    .game-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .badge-final { background: #052e16; color: #22c55e; }
+    .badge-live { background: #450a0a; color: #ef4444; }
+    .badge-scheduled { background: #0c1a3d; color: #3b82f6; }
+
+    .pool-tag {
+      font-size: 0.7rem;
+      color: #666;
+      margin-bottom: 0.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #222;
+      color: #555;
+      font-size: 0.75rem;
+    }
+
+    footer a { color: #3b82f6; text-decoration: none; }
+
+    #updated { color: #555; font-size: 0.75rem; text-align: center; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>World Baseball Classic 2026</h1>
+      <p>Calendario suscribible para tu equipo favorito</p>
+    </header>
+
+    <div id="updated"></div>
+
+    <div class="pools">
+      <h2>Selecciona un equipo</h2>
+
+      <div class="pool-section">
+        <div class="team-grid">
+          <button class="team-btn all-btn" data-team="all">
+            <span class="code">Todos los juegos</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="pool-a" class="pool-section">
+        <div class="pool-label">Pool A &mdash; San Juan</div>
+        <div class="team-grid"></div>
+      </div>
+      <div id="pool-b" class="pool-section">
+        <div class="pool-label">Pool B &mdash; Houston</div>
+        <div class="team-grid"></div>
+      </div>
+      <div id="pool-c" class="pool-section">
+        <div class="pool-label">Pool C &mdash; Tokyo</div>
+        <div class="team-grid"></div>
+      </div>
+      <div id="pool-d" class="pool-section">
+        <div class="pool-label">Pool D &mdash; Miami</div>
+        <div class="team-grid"></div>
+      </div>
+    </div>
+
+    <div id="calendar-section">
+      <h3 id="cal-title"></h3>
+      <div class="url-box">
+        <input id="cal-url" readonly />
+        <button id="copy-btn">Copiar</button>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <a id="webcal-link" class="webcal-btn" href="#">Suscribirse (Apple/Outlook)</a>
+        <a id="gcal-link" class="webcal-btn" href="#" target="_blank" style="background:#4285f4">Google Calendar</a>
+      </div>
+      <div class="instructions">
+        <strong>Google Calendar:</strong> Haz clic en el boton de Google Calendar, o ve a Configuracion &gt; Agregar calendario &gt; Desde URL y pega el enlace.<br/>
+        <strong>Apple Calendar:</strong> Haz clic en "Suscribirse" o en Archivo &gt; Nueva suscripcion y pega el enlace.<br/>
+        <strong>Outlook:</strong> Haz clic en "Suscribirse" o agrega por URL en la seccion de calendarios.
+      </div>
+    </div>
+
+    <div id="games-section"></div>
+
+    <footer>
+      Datos de <a href="https://www.mlb.com/world-baseball-classic" target="_blank">MLB.com</a>. Actualizado automaticamente.
+    </footer>
+  </div>
+
+  <script>
+    const BASE_URL = location.origin + location.pathname.replace(/\/[^/]*$/, "");
+
+    let DATA = { teams: [], games: [] };
+
+    async function init() {
+      try {
+        const res = await fetch("data.json");
+        DATA = await res.json();
+      } catch {
+        document.getElementById("games-section").innerHTML =
+          '<p style="color:#666;text-align:center">No se pudieron cargar los datos.</p>';
+        return;
+      }
+
+      if (DATA.updatedAt) {
+        const d = new Date(DATA.updatedAt);
+        document.getElementById("updated").textContent =
+          `Actualizado: ${d.toLocaleString("es", { dateStyle: "medium", timeStyle: "short" })}`;
+      }
+
+      renderTeams();
+
+      const hash = location.hash.slice(1).toUpperCase();
+      if (hash === "ALL") {
+        selectTeam("all");
+      } else if (hash && DATA.teams.find((t) => t.code === hash)) {
+        selectTeam(hash);
+      }
+    }
+
+    function renderTeams() {
+      const pools = { A: "pool-a", B: "pool-b", C: "pool-c", D: "pool-d" };
+
+      for (const team of DATA.teams) {
+        const grid = document.querySelector(`#${pools[team.pool]} .team-grid`);
+        if (!grid) continue;
+
+        const btn = document.createElement("button");
+        btn.className = "team-btn";
+        btn.dataset.team = team.code;
+        btn.innerHTML = `<span class="flag">${team.flag}</span><span class="code">${team.code}</span>`;
+        btn.title = team.name;
+        btn.onclick = () => selectTeam(team.code);
+        grid.appendChild(btn);
+      }
+
+      document.querySelector(".all-btn").onclick = () => selectTeam("all");
+    }
+
+    function selectTeam(code) {
+      location.hash = code;
+
+      document.querySelectorAll(".team-btn").forEach((b) => {
+        b.classList.toggle("active",
+          b.dataset.team === code || (code === "all" && b.dataset.team === "all"));
+      });
+
+      const section = document.getElementById("calendar-section");
+      section.style.display = "block";
+
+      let fileName, title;
+      if (code === "all") {
+        fileName = "all.ics";
+        title = "Todos los juegos";
+      } else {
+        const team = DATA.teams.find((t) => t.code === code);
+        fileName = `${code.toLowerCase()}.ics`;
+        title = team ? `${team.flag} ${team.name}` : code;
+      }
+
+      const calUrl = `${BASE_URL}/calendars/${fileName}`;
+      document.getElementById("cal-title").textContent = title;
+      document.getElementById("cal-url").value = calUrl;
+      document.getElementById("webcal-link").href = calUrl.replace(/^https?/, "webcal");
+      document.getElementById("gcal-link").href =
+        `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(calUrl)}`;
+
+      renderGames(code);
+    }
+
+    function renderGames(code) {
+      const container = document.getElementById("games-section");
+      let games;
+
+      if (code === "all") {
+        games = DATA.games;
+      } else {
+        const team = DATA.teams.find((t) => t.code === code);
+        if (!team) { container.innerHTML = ""; return; }
+        games = DATA.games.filter(
+          (g) => g.away.id === team.id || g.home.id === team.id
+        );
+      }
+
+      if (!games.length) {
+        container.innerHTML = '<p style="color:#666;text-align:center">Sin juegos disponibles.</p>';
+        return;
+      }
+
+      const finished = games.filter((g) => g.statusCode === "F" || g.statusCode === "FR");
+      const upcoming = games.filter((g) => g.statusCode !== "F" && g.statusCode !== "FR");
+
+      let html = "";
+
+      if (finished.length) {
+        html += '<h3>Resultados</h3>';
+        html += finished.map((g) => gameCard(g)).join("");
+      }
+
+      if (upcoming.length) {
+        html += '<h3>Proximos juegos</h3>';
+        html += upcoming.map((g) => gameCard(g)).join("");
+      }
+
+      container.innerHTML = html;
+    }
+
+    function gameCard(game) {
+      const isFinal = game.statusCode === "F" || game.statusCode === "FR";
+      const isLive = game.statusCode === "I" || game.statusCode === "MA";
+      const cls = isFinal ? "final" : isLive ? "live" : "scheduled";
+
+      const badgeCls = isFinal ? "badge-final" : isLive ? "badge-live" : "badge-scheduled";
+      const badgeText = isFinal ? "Final" : isLive ? "En vivo" : "Programado";
+
+      const date = new Date(game.startTime);
+      const dateStr = date.toLocaleDateString("es", { weekday: "short", month: "short", day: "numeric" });
+      const timeStr = date.toLocaleTimeString("es", { hour: "2-digit", minute: "2-digit" });
+
+      const awayClass = isFinal && game.away.isWinner ? "game-winner" : "";
+      const homeClass = isFinal && game.home.isWinner ? "game-winner" : "";
+
+      const score = isFinal
+        ? `<span class="game-score">${game.away.score} - ${game.home.score}</span>`
+        : "";
+
+      return `
+        <div class="game-card ${cls}">
+          <div class="game-teams">
+            <div class="pool-tag">${game.description || game.seriesDescription}</div>
+            <span class="${awayClass}">${game.away.name}</span>
+            <span class="vs">vs</span>
+            <span class="${homeClass}">${game.home.name}</span>
+          </div>
+          ${score}
+          <div class="game-meta">
+            <div>${dateStr}</div>
+            <div>${timeStr}</div>
+            <div><span class="game-badge ${badgeCls}">${badgeText}</span></div>
+          </div>
+        </div>`;
+    }
+
+    document.getElementById("copy-btn").addEventListener("click", () => {
+      const input = document.getElementById("cal-url");
+      navigator.clipboard.writeText(input.value).then(() => {
+        const btn = document.getElementById("copy-btn");
+        btn.textContent = "Copiado!";
+        setTimeout(() => (btn.textContent = "Copiar"), 2000);
+      });
+    });
+
+    init();
+  </script>
+</body>
+</html>
