@@ -59,6 +59,11 @@ function buildEvent(game) {
     `DESCRIPTION:${escapeICS(descParts.join("\\n"))}`,
     `LOCATION:${escapeICS(game.venue)}`,
     `STATUS:${status}`,
+    "BEGIN:VALARM",
+    "TRIGGER:-PT30M",
+    "ACTION:DISPLAY",
+    `DESCRIPTION:${escapeICS(summary)} starts in 30 minutes`,
+    "END:VALARM",
     "END:VEVENT",
   ];
 
