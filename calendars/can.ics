@@ -8,62 +8,77 @@ METHOD:PUBLISH
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:wbc2026-788138@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260307T160000Z
 DTEND:20260307T193000Z
-SUMMARY:Colombia vs Canada
-DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nCOL: 0-0 | CAN: 0-0
+SUMMARY:Colombia vs Canada (2-8)
+DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nFinal: Colombia 2 - Canada 8\\nWinner: Canada\\nCOL: 0-2 | CAN: 1-0
 LOCATION:Hiram Bithorn Stadium
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Colombia vs Canada starts in 30 minutes
+DESCRIPTION:Colombia vs Canada (2-8) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788134@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260308T230000Z
 DTEND:20260309T023000Z
-SUMMARY:Panama vs Canada
-DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nPAN: 0-0 | CAN: 0-0
+SUMMARY:Panama vs Canada (4-3)
+DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nFinal: Panama 4 - Canada 3\\nWinner: Panama\\nPAN: 1-2 | CAN: 1-1
 LOCATION:Hiram Bithorn Stadium
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Panama vs Canada starts in 30 minutes
+DESCRIPTION:Panama vs Canada (4-3) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788132@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260310T230000Z
 DTEND:20260311T023000Z
-SUMMARY:Canada vs Puerto Rico
-DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nCAN: 0-0 | PUR: 0-0
+SUMMARY:Canada vs Puerto Rico (3-2)
+DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nFinal: Canada 3 - Puerto Rico 2\\nWinner: Canada\\nCAN: 2-1 | PUR: 3-1
 LOCATION:Hiram Bithorn Stadium
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Canada vs Puerto Rico starts in 30 minutes
+DESCRIPTION:Canada vs Puerto Rico (3-2) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788130@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260311T190000Z
 DTEND:20260311T223000Z
-SUMMARY:Canada vs Cuba
-DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nCAN: 0-0 | CUB: 0-0
+SUMMARY:Canada vs Cuba (7-2)
+DESCRIPTION:Pool A\\nWorld Baseball Classic Pool Play\\nFinal: Canada 7 - Cuba 2\\nWinner: Canada\\nCAN: 3-1 | CUB: 2-2
 LOCATION:Hiram Bithorn Stadium
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Canada vs Cuba (7-2) starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wbc2026-788100@worldbaseballclassic
+DTSTAMP:20260312T043921Z
+DTSTART:20260314T000000Z
+DTEND:20260314T033000Z
+SUMMARY:United States vs Canada
+DESCRIPTION:Quarterfinal 2: Pool B Runner-Up vs. Pool A Winner\\nWorld Baseball Classic Quarterfinals\\nUSA: 0-0 | CAN: 0-0
+LOCATION:Daikin Park
 STATUS:TENTATIVE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Canada vs Cuba starts in 30 minutes
+DESCRIPTION:United States vs Canada starts in 30 minutes
 END:VALARM
 END:VEVENT
 

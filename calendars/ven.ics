@@ -8,62 +8,77 @@ METHOD:PUBLISH
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:wbc2026-788110@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260306T170000Z
 DTEND:20260306T203000Z
-SUMMARY:Netherlands vs Venezuela
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNED: 0-0 | VEN: 0-0
+SUMMARY:Netherlands vs Venezuela (2-6)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Netherlands 2 - Venezuela 6\\nWinner: Venezuela\\nNED: 0-1 | VEN: 1-0
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Netherlands vs Venezuela starts in 30 minutes
+DESCRIPTION:Netherlands vs Venezuela (2-6) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788107@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260308T000000Z
 DTEND:20260308T033000Z
-SUMMARY:Israel vs Venezuela
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nISR: 0-0 | VEN: 0-0
+SUMMARY:Israel vs Venezuela (3-11)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Israel 3 - Venezuela 11\\nWinner: Venezuela\\nISR: 0-1 | VEN: 2-0
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Israel vs Venezuela starts in 30 minutes
+DESCRIPTION:Israel vs Venezuela (3-11) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788099@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260309T230000Z
 DTEND:20260310T023000Z
-SUMMARY:Venezuela vs Nicaragua
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nVEN: 0-0 | NCA: 0-0
+SUMMARY:Venezuela vs Nicaragua (4-0)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Venezuela 4 - Nicaragua 0\\nWinner: Venezuela\\nVEN: 3-0 | NCA: 0-4
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Venezuela vs Nicaragua starts in 30 minutes
+DESCRIPTION:Venezuela vs Nicaragua (4-0) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788101@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260312T000000Z
 DTEND:20260312T033000Z
-SUMMARY:Dominican Republic vs Venezuela
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nDOM: 0-0 | VEN: 0-0
+SUMMARY:Dominican Republic vs Venezuela (7-5)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Dominican Republic 7 - Venezuela 5\\nWinner: Dominican Republic\\nDOM: 4-0 | VEN: 3-1
+LOCATION:loanDepot park
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Dominican Republic vs Venezuela (7-5) starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wbc2026-788097@worldbaseballclassic
+DTSTAMP:20260312T043921Z
+DTSTART:20260315T010000Z
+DTEND:20260315T043000Z
+SUMMARY:Venezuela vs Japan
+DESCRIPTION:Quarterfinal 4: Pool D Runner-Up vs. Pool C Winner\\nWorld Baseball Classic Quarterfinals\\nVEN: 0-0 | JPN: 0-0
 LOCATION:loanDepot park
 STATUS:TENTATIVE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Dominican Republic vs Venezuela starts in 30 minutes
+DESCRIPTION:Venezuela vs Japan starts in 30 minutes
 END:VALARM
 END:VEVENT
 

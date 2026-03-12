@@ -8,62 +8,62 @@ METHOD:PUBLISH
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:wbc2026-788105@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260307T000000Z
 DTEND:20260307T033000Z
-SUMMARY:Nicaragua vs Dominican Republic
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNCA: 0-0 | DOM: 0-0
+SUMMARY:Nicaragua vs Dominican Republic (3-12)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Nicaragua 3 - Dominican Republic 12\\nWinner: Dominican Republic\\nNCA: 0-1 | DOM: 1-0
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Nicaragua vs Dominican Republic starts in 30 minutes
+DESCRIPTION:Nicaragua vs Dominican Republic (3-12) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788108@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260307T170000Z
 DTEND:20260307T203000Z
-SUMMARY:Nicaragua vs Netherlands
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNCA: 0-0 | NED: 0-0
+SUMMARY:Nicaragua vs Netherlands (3-4)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Nicaragua 3 - Netherlands 4\\nWinner: Netherlands\\nNCA: 0-2 | NED: 1-1
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Nicaragua vs Netherlands starts in 30 minutes
+DESCRIPTION:Nicaragua vs Netherlands (3-4) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788104@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260308T230000Z
 DTEND:20260309T023000Z
-SUMMARY:Nicaragua vs Israel
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNCA: 0-0 | ISR: 0-0
+SUMMARY:Nicaragua vs Israel (0-5)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Nicaragua 0 - Israel 5\\nWinner: Israel\\nNCA: 0-3 | ISR: 1-1
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Nicaragua vs Israel starts in 30 minutes
+DESCRIPTION:Nicaragua vs Israel (0-5) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788099@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260309T230000Z
 DTEND:20260310T023000Z
-SUMMARY:Venezuela vs Nicaragua
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nVEN: 0-0 | NCA: 0-0
+SUMMARY:Venezuela vs Nicaragua (4-0)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Venezuela 4 - Nicaragua 0\\nWinner: Venezuela\\nVEN: 3-0 | NCA: 0-4
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Venezuela vs Nicaragua starts in 30 minutes
+DESCRIPTION:Venezuela vs Nicaragua (4-0) starts in 30 minutes
 END:VALARM
 END:VEVENT
 

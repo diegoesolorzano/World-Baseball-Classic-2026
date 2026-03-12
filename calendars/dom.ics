@@ -8,26 +8,26 @@ METHOD:PUBLISH
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:wbc2026-788105@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260307T000000Z
 DTEND:20260307T033000Z
-SUMMARY:Nicaragua vs Dominican Republic
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNCA: 0-0 | DOM: 0-0
+SUMMARY:Nicaragua vs Dominican Republic (3-12)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Nicaragua 3 - Dominican Republic 12\\nWinner: Dominican Republic\\nNCA: 0-1 | DOM: 1-0
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Nicaragua vs Dominican Republic starts in 30 minutes
+DESCRIPTION:Nicaragua vs Dominican Republic (3-12) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788106@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260308T160000Z
 DTEND:20260308T193000Z
 SUMMARY:Netherlands vs Dominican Republic
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNED: 0-0 | DOM: 0-0
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNED: 1-2 | DOM: 2-0
 LOCATION:loanDepot park
 STATUS:TENTATIVE
 BEGIN:VALARM
@@ -38,32 +38,47 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788103@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260309T160000Z
 DTEND:20260309T193000Z
-SUMMARY:Dominican Republic vs Israel
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nDOM: 0-0 | ISR: 0-0
+SUMMARY:Dominican Republic vs Israel (10-1)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Dominican Republic 10 - Israel 1\\nWinner: Dominican Republic\\nDOM: 3-0 | ISR: 1-2
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Dominican Republic vs Israel starts in 30 minutes
+DESCRIPTION:Dominican Republic vs Israel (10-1) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788101@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260312T000000Z
 DTEND:20260312T033000Z
-SUMMARY:Dominican Republic vs Venezuela
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nDOM: 0-0 | VEN: 0-0
+SUMMARY:Dominican Republic vs Venezuela (7-5)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Dominican Republic 7 - Venezuela 5\\nWinner: Dominican Republic\\nDOM: 4-0 | VEN: 3-1
+LOCATION:loanDepot park
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Dominican Republic vs Venezuela (7-5) starts in 30 minutes
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:wbc2026-788095@worldbaseballclassic
+DTSTAMP:20260312T043921Z
+DTSTART:20260313T223000Z
+DTEND:20260314T020000Z
+SUMMARY:South Korea vs Dominican Republic
+DESCRIPTION:Quarterfinal 1: Pool C Runner-Up vs. Pool D Winner\\nWorld Baseball Classic Quarterfinals\\nKOR: 0-0 | DOM: 0-0
 LOCATION:loanDepot park
 STATUS:TENTATIVE
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Dominican Republic vs Venezuela starts in 30 minutes
+DESCRIPTION:South Korea vs Dominican Republic starts in 30 minutes
 END:VALARM
 END:VEVENT
 

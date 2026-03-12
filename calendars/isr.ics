@@ -8,62 +8,62 @@ METHOD:PUBLISH
 X-PUBLISHED-TTL:PT6H
 BEGIN:VEVENT
 UID:wbc2026-788107@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260308T000000Z
 DTEND:20260308T033000Z
-SUMMARY:Israel vs Venezuela
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nISR: 0-0 | VEN: 0-0
+SUMMARY:Israel vs Venezuela (3-11)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Israel 3 - Venezuela 11\\nWinner: Venezuela\\nISR: 0-1 | VEN: 2-0
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Israel vs Venezuela starts in 30 minutes
+DESCRIPTION:Israel vs Venezuela (3-11) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788104@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260308T230000Z
 DTEND:20260309T023000Z
-SUMMARY:Nicaragua vs Israel
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nNCA: 0-0 | ISR: 0-0
+SUMMARY:Nicaragua vs Israel (0-5)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Nicaragua 0 - Israel 5\\nWinner: Israel\\nNCA: 0-3 | ISR: 1-1
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Nicaragua vs Israel starts in 30 minutes
+DESCRIPTION:Nicaragua vs Israel (0-5) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788103@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260309T160000Z
 DTEND:20260309T193000Z
-SUMMARY:Dominican Republic vs Israel
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nDOM: 0-0 | ISR: 0-0
+SUMMARY:Dominican Republic vs Israel (10-1)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Dominican Republic 10 - Israel 1\\nWinner: Dominican Republic\\nDOM: 3-0 | ISR: 1-2
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Dominican Republic vs Israel starts in 30 minutes
+DESCRIPTION:Dominican Republic vs Israel (10-1) starts in 30 minutes
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:wbc2026-788102@worldbaseballclassic
-DTSTAMP:20260306T042646Z
+DTSTAMP:20260312T043921Z
 DTSTART:20260310T230000Z
 DTEND:20260311T023000Z
-SUMMARY:Israel vs Netherlands
-DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nISR: 0-0 | NED: 0-0
+SUMMARY:Israel vs Netherlands (6-2)
+DESCRIPTION:Pool D\\nWorld Baseball Classic Pool Play\\nFinal: Israel 6 - Netherlands 2\\nWinner: Israel\\nISR: 2-2 | NED: 1-3
 LOCATION:loanDepot park
-STATUS:TENTATIVE
+STATUS:CONFIRMED
 BEGIN:VALARM
 TRIGGER:-PT30M
 ACTION:DISPLAY
-DESCRIPTION:Israel vs Netherlands starts in 30 minutes
+DESCRIPTION:Israel vs Netherlands (6-2) starts in 30 minutes
 END:VALARM
 END:VEVENT
 
