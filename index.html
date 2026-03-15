@@ -174,8 +174,10 @@
       font-size: 0.85rem;
     }
 
+    .game-card.win { border-left: 3px solid #22c55e; }
+    .game-card.loss { border-left: 3px solid #ef4444; }
     .game-card.final { border-left: 3px solid #22c55e; }
-    .game-card.live { border-left: 3px solid #ef4444; }
+    .game-card.live { border-left: 3px solid #f59e0b; }
     .game-card.scheduled { border-left: 3px solid #3b82f6; }
 
     .game-teams { flex: 1; }
@@ -208,7 +210,9 @@
     }
 
     .badge-final { background: #052e16; color: #22c55e; }
-    .badge-live { background: #450a0a; color: #ef4444; }
+    .badge-win { background: #052e16; color: #22c55e; }
+    .badge-loss { background: #450a0a; color: #ef4444; }
+    .badge-live { background: #451a03; color: #f59e0b; }
     .badge-scheduled { background: #0c1a3d; color: #3b82f6; }
 
     .pool-tag {
@@ -397,26 +401,46 @@
 
       let html = "";
 
+      const selectedTeam = code !== "all" ? DATA.teams.find((t) => t.code === code) : null;
+
       if (finished.length) {
         html += '<h3>Resultados</h3>';
-        html += finished.map((g) => gameCard(g)).join("");
+        html += finished.map((g) => gameCard(g, selectedTeam)).join("");
       }
 
       if (upcoming.length) {
         html += '<h3>Proximos juegos</h3>';
-        html += upcoming.map((g) => gameCard(g)).join("");
+        html += upcoming.map((g) => gameCard(g, selectedTeam)).join("");
       }
 
       container.innerHTML = html;
     }
 
-    function gameCard(game) {
+    function gameCard(game, selectedTeam) {
       const isFinal = ["F", "FM", "FR", "FT"].includes(game.statusCode);
       const isLive = game.statusCode === "I" || game.statusCode === "MA";
-      const cls = isFinal ? "final" : isLive ? "live" : "scheduled";
 
-      const badgeCls = isFinal ? "badge-final" : isLive ? "badge-live" : "badge-scheduled";
-      const badgeText = isFinal ? "Final" : isLive ? "En vivo" : "Programado";
+      let cls, badgeCls, badgeText;
+
+      if (isFinal && selectedTeam) {
+        const isAway = game.away.id === selectedTeam.id;
+        const teamWon = isAway ? game.away.isWinner : game.home.isWinner;
+        cls = teamWon ? "win" : "loss";
+        badgeCls = teamWon ? "badge-win" : "badge-loss";
+        badgeText = teamWon ? "Victoria" : "Derrota";
+      } else if (isFinal) {
+        cls = "final";
+        badgeCls = "badge-final";
+        badgeText = "Final";
+      } else if (isLive) {
+        cls = "live";
+        badgeCls = "badge-live";
+        badgeText = "En vivo";
+      } else {
+        cls = "scheduled";
+        badgeCls = "badge-scheduled";
+        badgeText = "Programado";
+      }
 
       const date = new Date(game.startTime);
       const dateStr = date.toLocaleDateString("es", { weekday: "short", month: "short", day: "numeric" });
