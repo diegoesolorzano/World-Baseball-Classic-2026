@@ -392,8 +392,8 @@
         return;
       }
 
-      const finished = games.filter((g) => g.statusCode === "F" || g.statusCode === "FR");
-      const upcoming = games.filter((g) => g.statusCode !== "F" && g.statusCode !== "FR");
+      const finished = games.filter((g) => ["F", "FM", "FR", "FT"].includes(g.statusCode));
+      const upcoming = games.filter((g) => !["F", "FM", "FR", "FT"].includes(g.statusCode));
 
       let html = "";
 
@@ -411,7 +411,7 @@
     }
 
     function gameCard(game) {
-      const isFinal = game.statusCode === "F" || game.statusCode === "FR";
+      const isFinal = ["F", "FM", "FR", "FT"].includes(game.statusCode);
       const isLive = game.statusCode === "I" || game.statusCode === "MA";
       const cls = isFinal ? "final" : isLive ? "live" : "scheduled";
 
